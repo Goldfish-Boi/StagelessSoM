@@ -1,7 +1,23 @@
-local tweenService = game:GetService("TweenService")
+local TweenService = game:GetService("TweenService")
 
-for i, mesh in ipairs(script.Parent:GetChildren()) do
-	if mesh:IsA("MeshPart") then
-		tweenService:Create(mesh, TweenInfo.new(7.5, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, -1), {Orientation = Vector3.new(mesh.Orientation.X, mesh.Orientation.Y + 360, mesh.Orientation.Z)}):Play()
-	end
-end
+local serverDeaths = 0
+local label = script.Parent.TextLabel
+
+game.Players.PlayerAdded:Connect(function(plr)
+	plr.CharacterAdded:Connect(function(char)
+		local hum:Humanoid = char:FindFirstChild("Humanoid")
+		
+		if hum then
+			hum.Died:Connect(function()
+				serverDeaths += 1
+				
+				label.Text = "Server oofs: " .. serverDeaths
+				label.TextColor3 = Color3.fromRGB(255, 0, 0)
+				label.UIStroke.Color = Color3.fromRGB(255, 0, 0)
+				
+				TweenService:Create(label, TweenInfo.new(0.5, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {TextColor3 = Color3.fromRGB(0, 0, 0)}):Play()
+				TweenService:Create(label.UIStroke, TweenInfo.new(0.5, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {Color = Color3.fromRGB(255, 255, 255)}):Play()
+			end)
+		end
+	end)
+end)
