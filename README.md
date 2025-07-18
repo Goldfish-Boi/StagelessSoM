@@ -9,9 +9,9 @@ Towers are added to the game via a pre-existing community in which talented buil
 Made in Roblox Studio with Luau
 
 Want to be a part of the game's journey? Questions? Suggestions?
-[Discord](https://discord.gg/wkzNTvTvNU)
-[Roblox Community](https://www.roblox.com/communities/15256687/Absolution-Studios#!/about)
-[Youtube Channel](https://www.youtube.com/channel/UCZOOQWfg0nOZoy6qORPyzTA)
+- [Discord](https://discord.gg/wkzNTvTvNU)
+- [Roblox Community](https://www.roblox.com/communities/15256687/Absolution-Studios#!/about)
+- [Youtube Channel](https://www.youtube.com/channel/UCZOOQWfg0nOZoy6qORPyzTA)
 
 Inspired by the following games:
 - Eternal's Towers of Hell
