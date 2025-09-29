@@ -85,6 +85,7 @@ end
 
 function returnToSelf()
 	cam.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+	title.Text = game.Players.LocalPlayer.Name
 end
 
 game.ReplicatedStorage.Communicators.Bindables.Events.DataUpdate.Event:Connect(function(Type, data)
